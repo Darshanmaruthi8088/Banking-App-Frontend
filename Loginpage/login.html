@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BLAZEBANK Login</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="bank-login">
+    <section class="login-card">
+      <header>
+        <img src="1763719490411-sample.jpeg" alt="Bank Logo" class="bank-logo" />
+        <h1 class="bank-name">BLAZEBANK</h1>
+        <p class="bank-slogan">Unlock the Power of Digital Finance.</p>
+      </header>
+      <form id="loginForm" autocomplete="off">
+        <div class="form-group">
+          <input 
+            type="text" 
+            id="username" 
+            required 
+            autocomplete="username" 
+            placeholder=" " 
+          />
+          <label for="username" class="floating-label">Email/Username</label>
+        </div>
+
+        <div class="form-group password-group">
+          <input 
+            type="password" 
+            id="password" 
+            required 
+            autocomplete="current-password" 
+            placeholder=" " 
+          />
+          <label for="password" class="floating-label">Password</label>
+          <!-- Only one toggle button -->
+          <button type="button" id="togglePwd" tabIndex="-1" title="Show/Hide Password"></button>
+          <meter id="strengthBar" value="0" min="0" max="100"></meter>
+        </div>
+
+        <div class="flex-row gap">
+          <label class="checkbox-label">
+            <input type="checkbox" id="rememberMe" /> Remember Me
+          </label>
+          <a href="#" id="forgotLink">Forgot Password?</a>
+        </div>
+
+        <button type="submit" id="loginBtn" class="btn-primary">Login</button>
+
+        <div id="loading" class="loading hidden">
+          <span class="spinner"></span> Logging you in…
+        </div>
+
+        <div id="errorMsg" class="error-msg"></div>
+        <div id="countdown" class="countdown"></div>
+      </form>
+
+      <footer class="redirect-row">
+        <span>New user?</span>
+        <a href="register.html">Create account</a>
+      </footer>
+
+      <div class="server-status" id="serverStatus"></div>
+      <figure class="illustration"></figure>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

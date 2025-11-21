@@ -1,0 +1,382 @@
+:root {
+  --primary: #2845c7;
+  --gradient: linear-gradient(145deg, #1f2a44, #23325d);
+  --shadow: 0 5px 30px rgba(20, 32, 57, 0.84);
+  --input-bg: #f2f4f8;
+  --border-radius: 12px;
+  --danger: #d7263d;
+  --success: #21bf73;
+  --transition: 0.18s ease;
+  --font-main: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top left, #2a3b61, #1a243f 70%), var(--gradient);
+  background-blend-mode: overlay;
+  color: #eef1f7;
+  min-height: 100vh;
+  font-family: var(--font-main);
+}
+
+.bank-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-main);
+}
+
+.login-card {
+  background: linear-gradient(135deg, #384d82, #233361);
+  box-shadow: var(--shadow);
+  padding: 2rem 1.8rem;
+  border-radius: var(--border-radius);
+  max-width: 375px;
+  width: 96vw;
+  animation: fadeIn 0.7s;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  border: 1px solid #4a638c88;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(.9);}
+  to { opacity: 1; transform: scale(1);}
+}
+
+header {
+  text-align: center;
+  padding-bottom: 12px;
+}
+
+.bank-logo {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 6px 20px #0009;
+  background: #fff;
+  transition: box-shadow 0.3s ease;
+}
+
+.bank-logo:hover {
+  box-shadow: 0 8px 28px #002255aa;
+}
+
+.bank-name {
+  font-size: 2.6rem;
+  font-weight: 900;
+  margin: 0;
+  letter-spacing: 3px;
+  color: #caddff;
+  user-select: none;
+  text-shadow: 0 2px 6px #0d1c34;
+}
+
+.bank-slogan {
+  font-size: 1.05rem;
+  font-weight: 400;
+  margin-top: 4px;
+  margin-bottom: 6px;
+  font-style: italic;
+  color: #a4c3ffcc;
+  user-select: none;
+  text-shadow: 0 1px 3px #0b1c2f;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.password-group {
+  position: relative;
+}
+
+.floating-label {
+  position: absolute;
+  left: 14px;
+  top: 10px;
+  font-size: 0.93rem;
+  color: #7e93c3;
+  pointer-events: none;
+  transition: var(--transition);
+  background: transparent;
+}
+
+input:focus + .floating-label,
+input:not(:placeholder-shown) + .floating-label {
+  top: -14px;
+  left: 10px;
+  font-size: 0.82rem;
+  color: #9ec1f7;
+  background: var(--input-bg);
+  padding: 1.5px 8px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+input[type="text"], input[type="password"] {
+  font-size: 1.1rem;
+  padding: 14px 46px 14px 13px;
+  border-radius: var(--border-radius);
+  background: var(--input-bg);
+  border: 1.5px solid #607bbfaa;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+input:focus {
+  border-color: #82a7ff;
+  box-shadow: 0 0 8px #7ca2ffbb;
+  outline: none;
+}
+
+.password-group button#togglePwd {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #6483c9;
+  font-size: 1.6em;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.password-group button#togglePwd:active,
+.password-group button#togglePwd:focus {
+  color: #9ebeff;
+}
+
+input[type="password"] {
+  padding-right: 46px !important;
+}
+
+meter {
+  width: 100%;
+  height: 10px;
+  margin-top: 6px;
+  border-radius: 5px;
+  appearance: none;
+}
+
+meter::-webkit-meter-bar {
+  background: #ddd;
+  border-radius: 5px;
+}
+
+meter::-webkit-meter-optimum-value {
+  background: var(--success);
+  border-radius: 5px;
+}
+
+meter::-webkit-meter-suboptimum-value {
+  background: #f4b876;
+  border-radius: 5px;
+}
+
+meter::-webkit-meter-even-less-good-value {
+  background: var(--danger);
+  border-radius: 5px;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gap { 
+  gap: 9px; 
+}
+
+.checkbox-label {
+  font-size: 1rem;
+  color: #a9bcffdd;
+  user-select: none;
+  cursor: pointer;
+}
+
+a {
+  color: #98bbffcc;
+  text-decoration: underline;
+  font-size: 1rem;
+  transition: color var(--transition);
+  user-select: none;
+}
+
+a:hover {
+  color: #bbd6ff;
+}
+
+.btn-primary {
+  padding: 15px 0;
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #fff;
+  background: #3a62f1;
+  border-radius: var(--border-radius);
+  border: none;
+  box-shadow: 0 8px 28px #4978e3cc;
+  cursor: pointer;
+  transition: transform var(--transition), background var(--transition);
+  user-select: none;
+}
+
+.btn-primary:disabled {
+  background: #7e8fb4cc;
+  cursor: not-allowed;
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+  background: #7285cc;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #afbfff;
+  font-size: 1.1rem;
+  letter-spacing: 0.2px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.spinner {
+  border: 3px solid #d1d9ff;
+  border-top: 3px solid #4058ff;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  animation: spin 0.85s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error-msg {
+  color: var(--danger);
+  font-size: 1.1rem;
+  margin-top: 5px;
+  min-height: 22px;
+  text-align: center;
+  transition: transform 0.18s;
+  user-select: none;
+}
+
+.shake {
+  animation: shake 0.35s linear;
+}
+
+@keyframes shake {
+  0% {transform: translateX(0);}
+  23% {transform: translateX(-8px);}
+  47% {transform: translateX(8px);}
+  72% {transform: translateX(-8px);}
+  100% {transform: translateX(0);}
+}
+
+.countdown {
+  color: var(--danger);
+  font-size: 1rem;
+  text-align: center;
+  user-select: none;
+}
+
+.redirect-row {
+  text-align: center;
+  color: #a9bbffdd;
+  margin-top: 6px;
+  user-select: none;
+}
+
+.server-status {
+  margin-top: 10px;
+  color: #e35f5f;
+  font-size: 1.03rem;
+  text-align: center;
+  user-select: none;
+}
+
+.illustration {
+  width: 76px;
+  height: 76px;
+  background: url('bank-illustration.svg') center/contain no-repeat;
+  margin: 15px auto 0 auto;
+  user-select: none;
+}
+
+/* 🔽 NEW: hide browser's default password reveal icon (Edge/IE) */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+/* Some Chromium/Edge builds also use this button – hide it if present */
+input::-webkit-credentials-auto-fill-button {
+  visibility: hidden;
+  pointer-events: none;
+  position: absolute;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .login-card {
+    max-width: 99vw;
+    border-radius: 10px;
+    padding: 1.2rem 0.4rem;
+  }
+
+  .bank-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .bank-name {
+    font-size: 2rem;
+  }
+
+  .bank-slogan {
+    font-size: 0.9rem;
+  }
+
+  .illustration {
+    width: 50px;
+    height: 50px;
+  }
+
+  input,
+  .btn-primary {
+    font-size: 1rem;
+    padding: 13px;
+  }
+
+  .password-group button#togglePwd {
+    right: 10px;
+  }
+}
