@@ -323,13 +323,13 @@ a:hover {
   user-select: none;
 }
 
-/*.illustration {
+.illustration {
   width: 76px;
   height: 76px;
   background: url('bank-illustration.svg') center/contain no-repeat;
   margin: 15px auto 0 auto;
   user-select: none;
-}*/
+}
 
 /* 🔽 NEW: hide browser's default password reveal icon (Edge/IE) */
 input[type="password"]::-ms-reveal,
