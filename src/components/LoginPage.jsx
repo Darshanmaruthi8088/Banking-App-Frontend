@@ -47,6 +47,15 @@ export default function LoginPage() {
     if (/[\W]/.test(pwd)) score += 20;
     setStrength(score);
   }
+  <input
+  type="text"
+  id="username"
+  name="username"
+  required
+  autoComplete="username"
+  placeholder=" "
+/>
+
 
   function blockUI(seconds) {
     setCountdown(seconds);

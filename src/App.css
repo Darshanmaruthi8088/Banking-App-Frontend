@@ -4,6 +4,18 @@
   padding: 2rem;
   text-align: center;
 }
+input {
+  -webkit-text-security: none;
+  appearance: false;
+}
+input[type="text"],
+input[type="password"] {
+  color: #000 !important;     /* black text */
+  -webkit-text-fill-color: #000 !important;  /* fix safari/chrome */
+}
+input::placeholder {
+  color: #888 !important; 
+}
 
 .logo {
   height: 6em;
