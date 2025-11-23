@@ -353,6 +353,15 @@ input::-webkit-credentials-auto-fill-button {
     border-radius: 10px;
     padding: 1.2rem 0.4rem;
   }
+  /* Make typed text black for both email/username and password */
+input[type="text"],
+input[type="password"] {
+  color: #000 !important;
+}
+
+input::placeholder {
+  color: #777 !important;  /* lighter black */
+}
 
   .bank-logo {
     width: 48px;
