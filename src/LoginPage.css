@@ -168,7 +168,9 @@ input:focus {
 
 input[type="password"] {
   padding-right: 46px !important;
+  background: var(--input-bg) !important;   /* ← Add this line */
 }
+
 
 meter {
   width: 100%;
